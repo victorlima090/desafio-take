@@ -33,7 +33,7 @@ public class TakeBotController {
 
         try {
             GitHubApi gitHubApiService = GitHubApiService.createService(GitHubApi.class);
-            Response<List<ResponseDTO>> githubAPiResponse = gitHubApiService.getMostOlderTakeCSharpRepos(userName,
+            Response<List<ResponseDTO>> githubAPiResponse = gitHubApiService.getGithubReposByUsername(userName,
                     sort, direction, page, perPage, language)
                     .execute();
             if (githubAPiResponse.code() == 200) {
